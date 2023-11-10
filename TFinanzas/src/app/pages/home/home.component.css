@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+
+mat-toolbar{
+  display:flex;
+  justify-content: space-between;
+}
+.content-title{
+  text-align: center;
+  margin-top: 70px;
+}
+.h1-title{
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 800;
+  letter-spacing: 1px;
+  font-size: 100px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(177, 177, 177, 0.2));
+  -webkit-background-clip: text;
+  color: transparent;
+  line-height: 0.95;
+}
+.content-subtitle{
+  text-align: center;
+  margin-top: 60px;
+}
+.h2-subtitle{
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 700;
+  font-size: 33px;
+  color: #33B294;
+}
+
+.currency-options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15px;
+}
+
+.currency-options label {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 400;
+  margin-right: 10px;
+  margin-left: 5px;
+  letter-spacing: 1px;
+}
+
+.currency-options input[type="checkbox"] {
+  margin-right: 5px;
+  width: 19px;
+  height: 19px;
+  border: 1px solid #FFFFFF;
+  background: transparent;
+  border-radius: 3px;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.currency-options input[type="checkbox"]:checked {
+  background: #33B294;
+}
+
+.content-questions {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.question {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 20px;
+  text-align: center;
+}
+
+.questions {
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+mat-form-field {
+  margin-top: 7px;
+  width: 300px;
+}
+
+input[matInput] {
+  font-size: 20px;
+  font-family: 'Nunito Sans', sans-serif;
+  width: 100%;
+}
+
+.content-button{
+  margin-top: 60px;
+  margin-bottom: 100px;
+  text-align: center;
+}
+
+.content-button button {
+  width: 500px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #00523F;
+}
+
+.motion3{
+  position: absolute;
+  margin-left: 1113px;
+}
+
+.motion2{
+  position: absolute;
+  z-index: -1;
+  top: 850px;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.content-container {
+  margin-top: 55px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between; /* Espaciado entre los contenedores */
+}
+
+.content-content1 {
+
+  width: 50%;
+  padding: 10px; /* Opcional: Agrega un poco de espacio interior */
+}
+
+.content-content2 {
+
+  width: 50%;
+  padding: 10px; /* Opcional: Agrega un poco de espacio interior */
+}
+
+.content-button {
+  width: 100%; /* Ocupa el 100% del ancho disponible debajo de los contenedores */
+  padding: 10px; /* Opcional: Agrega un poco de espacio interior */
+}
+
+.card-datos{
+  margin: 5px;
+  background-color: rgba(17, 110, 88, 0.5); /* Color con 50% de opacidad */
+  border-radius: 10px; /* Radio de las esquinas */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
+  color: white; /* Color del texto */
+  height: 1250px;
+}
+

@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="card1">
+    <div class="form">
+      <div class="form__container">
+        <div class="centered-content">
+          <img src="./assets/avatar.png" alt="Avatar">
+          <h1>Bienvenido</h1>
+        </div>
+        <form [formGroup]="form" (ngSubmit)="logIn()">
+          <div>
+            <mat-form-field>
+              <mat-label>Email</mat-label>
+              <input matInput formControlName="email" />
+              <mat-error *ngIf="isEmailValid as messsage">{{ messsage }}</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div>
+            <mat-form-field>
+              <mat-label>Enter your password</mat-label>
+              <input
+                matInput
+                [type]="hide ? 'password' : 'text'"
+                formControlName="password"
+              />
+              <button
+                mat-icon-button
+                matSuffix
+                (click)="hide = !hide"
+                [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide"
+              >
+                <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+              </button>
+              <mat-error>This field is required</mat-error>
+            </mat-form-field>
+          </div>
+          <div style="text-align: right;">
+            <a href="#" class="forgot-password-link">¿Has olvidado tu contraseña?</a>
+          </div>
+
+          <div>
+            <button style="background-color: #FFC42A;" mat-flat-button color="accent" type="submit">Log in</button>
+          </div>
+        </form>
+        <hr />
+        <app-button-providers [isLogin]="true" />
+      </div>
+    </div>
+  </div>
+
+  <div class="card2">
+    <img class="lamp" src="./assets/lamp.png" alt="Lamp">
+    <img class="motion1" src="./assets/motion1.png" alt="motion1">
+    <img class="person" src="./assets/person.png" alt="person">
+  </div>
+
+</div>

@@ -1,0 +1,233 @@
+<mat-toolbar color="" style="background-color: white">
+  <span>Inicio</span>
+
+  <button style="background-color: #00523F" mat-flat-button (click)="logOut()">Log-Out</button>
+</mat-toolbar>
+<!-- <img class="motion3" src="./assets/motion3.png" alt="motion3"> -->
+
+<div class="content-title">
+  <h1 class="h1-title">
+    Préstamo Vehicular
+  </h1>
+</div>
+
+<div   class="content-container">
+
+    <div class="content-content1">
+      <mat-card class="card-datos">
+      <div class="content-subtitle">
+      <h2 class="h2-subtitle">
+        Datos Personales
+      </h2>
+    </div>
+
+        <div class="content-questions" style="margin-top: 3vb">
+          <div class="question">
+       <label class="questions">Nombres*</label>
+          <mat-form-field>
+            <mat-label>nombres</mat-label>
+              <input matInput />
+          </mat-form-field>
+      </div>
+          <div class="question">
+        <label class="questions">Apellidos*</label>
+          <mat-form-field>
+            <mat-label>apellidos</mat-label>
+              <input matInput />
+            </mat-form-field>
+      </div>
+        </div>
+
+        <div class="content-questions" style="margin-top: 3vb">
+          <div class="question">
+            <label class="questions">DNI*</label>
+            <mat-form-field>
+              <mat-label>dni</mat-label>
+              <input matInput />
+            </mat-form-field>
+          </div>
+          <div class="question">
+            <label class="questions">Fecha de Nacimiento*</label>
+            <mat-form-field>
+              <mat-label>Fecha de Nacimiento*</mat-label>
+              <input matInput [matDatepicker]="picker" />
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="content-questions" style="margin-top: 3vb">
+          <div class="question">
+            <label class="questions">Distrito*</label>
+            <mat-form-field>
+              <mat-label>distrito</mat-label>
+              <mat-select>
+                <mat-option value="chorrillos">Chorrillos</mat-option>
+                <mat-option value="miraflores">Miraflores</mat-option>
+                <mat-option value="barranco">Barranco</mat-option>
+                <mat-option value="san isidro">San Isidro</mat-option>
+                <mat-option value="san miguel">San Miguel</mat-option>
+                <mat-option value="surco">Surco</mat-option>
+                <mat-option value="surquillo">Surquillo</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="question">
+            <label class="questions">Teléfono*</label>
+            <mat-form-field>
+              <mat-label>telefono</mat-label>
+              <input matInput type="number"/>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="content-questions" style="margin-top: 3vb">
+          <div class="question">
+            <label class="questions">Correo Electrónico*</label>
+            <mat-form-field>
+              <mat-label>correo electrónico</mat-label>
+              <input matInput />
+            </mat-form-field>
+          </div>
+          <div class="question">
+            <label class="questions">Estado Civil*</label>
+            <mat-form-field>
+              <mat-label>estado civil</mat-label>
+              <mat-select>
+                <mat-option value="soltero">Soltero</mat-option>
+                <mat-option value="casado">Casado</mat-option>
+                <mat-option value="viudo">Viudo</mat-option>
+                <mat-option value="divorciado">Divorciado</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+
+
+      <div class="content-content2">
+        <mat-card class="card-datos">
+      <div class="content-subtitle">
+    <h2 class="h2-subtitle">
+      Tipo de moneda
+    </h2>
+    <div class="currency-options">
+      <label>
+        <input type="checkbox" name="currency" value="Soles" [(ngModel)]="selectedCurrencySoles" (change)="onCurrencyChange('Soles')">
+        Soles
+      </label>
+      <label>
+        <input type="checkbox" name="currency" value="Dólares" [(ngModel)]="selectedCurrencyDollars" (change)="onCurrencyChange('Dólares')">
+        Dólares
+      </label>
+    </div>
+  </div>
+      <div class="content-questions" style="margin-top: 3vb">
+        <div class="question">
+          <label class="questions">¿Cuánto desea solicitar?*</label>
+          <mat-form-field>
+            <mat-label>Solicitar</mat-label>
+            <input matInput type="number" class="example-right-align" placeholder="0" name="precioVenta" [(ngModel)]="precioVenta">
+            <span matTextPrefix>{{ selectedCurrencySymbol }}</span>
+            <span matTextSuffix>.00</span>
+          </mat-form-field>
+        </div>
+      <div class="question">
+        <label class="questions">¿Por cuánto tiempo? (Meses)*</label>
+        <mat-form-field>
+          <mat-label>Meses</mat-label>
+          <input matInput />
+        </mat-form-field>
+      </div>
+  </div>
+      <div class="content-questions" style="margin-top: -4vb">
+      <div class="question">
+        <label class="questions">¿A qué tasa (%)?*</label>
+        <mat-form-field>
+          <mat-label>Tasa</mat-label>
+          <input matInput />
+        </mat-form-field>
+      </div>
+  </div>
+      <div class="content-questions" style="margin-top: -4vb">
+        <div class="question">
+          <label class="questions">¿Cual es el valor de su bien?*</label>
+          <mat-form-field>
+            <mat-label>Valor</mat-label>
+            <input matInput type="number" class="example-right-align" placeholder="0" name="porcentajecuotaInicial" [(ngModel)]="porcentajecuotaInicial">
+            <span matTextPrefix>{{ selectedCurrencySymbol }}</span>
+            <span matTextSuffix>.00</span>
+          </mat-form-field>
+        </div>
+    <div class="question">
+      <label class="questions">¿Cuanto es su cuota inicial?*</label>
+      <mat-form-field>
+        <mat-label>Inicial</mat-label>
+        <input matInput type="number" class="example-right-align" placeholder="0">
+        <span matTextPrefix>{{ selectedCurrencySymbol }}</span>
+        <span matTextSuffix>.00</span>
+      </mat-form-field>
+    </div>
+  </div>
+      <div class="content-subtitle" style="margin-top: 13vb">
+    <h2 class="h2-subtitle">
+      Fechas de Pago
+    </h2>
+  </div>
+      <div class="content-questions" style="margin-top: -3vb">
+    <div class="question">
+      <label class="questions">Fecha de Solicitud*</label>
+      <mat-form-field>
+        <mat-label>Fecha</mat-label>
+        <input matInput [matDatepicker]="picker" />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="question">
+      <label class="questions">Día de pago*</label>
+      <mat-form-field>
+        <mat-label>Meses</mat-label>
+        <input matInput />
+      </mat-form-field>
+    </div>
+  </div>
+      <div class="currency-options" style="margin-right: 450px; margin-top: -4vb">
+    <label >
+      <input type="checkbox" name="currency" value="Soles">
+      Periodo de Gracia
+    </label>
+  </div>
+      <div class="content-subtitle" style="margin-top: 13vb">
+    <h2 class="h2-subtitle">
+      Comprobante de pago
+    </h2>
+  </div>
+      <div class="content-questions" style="margin-top:-5vb">
+    <div class="question">
+      <label class="questions">¿Cómo le gustaría recibir su comprobante de pago?</label>
+    </div>
+  </div>
+          <div class="currency-options" style="margin-top: 2vb">
+            <label>
+              <input type="checkbox" [(ngModel)]="selectedCurrencyFisico" (change)="asdasd('Físico')">
+              Físico
+            </label>
+            <label>
+              <input type="checkbox" [(ngModel)]="selectedCurrencyVirtual" (change)="asdasd('Virtual')">
+              Virtual
+            </label>
+          </div>
+        </mat-card>
+        </div>
+
+
+
+  <!-- <img class="motion2" src="./assets/motion2.png" alt="motion2"> -->
+</div>
+<div class="content-button">
+  <button style="background-color: #FFC42A;" mat-flat-button color="accent" type="submit" (click)="navigateToResults()">Generar</button>
+</div>
+
